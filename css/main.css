@@ -1,0 +1,323 @@
+/* 1. Base */
+html {
+    background-color: #000000;
+    background-image: linear-gradient(to bottom right, #000000, #282828);
+    color: #FEFEFE;
+    font-family: "Quicksand", sans-serif;
+    font-size: 16px;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.5;
+    min-height: 100vh;
+    min-width: 300px;
+    overflow-x: hidden;
+    text-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+    scroll-behavior: smooth;
+}
+
+a {
+    color: currentColor;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+/* 2. Shared */
+.wallpaper,
+.picture-shadow,
+.picture-image {
+    display: block;
+    height: 100%;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+
+.job,
+.button {
+    font-family: "Montserrat", "Quicksand", sans-serif;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+}
+
+.button,
+.social a {
+    transform-origin: center;
+    transition-duration: 100ms;
+}
+
+.social {
+    display: flex;
+
+    margin-bottom: 1.5rem;
+}
+
+.social li {
+    height: 2rem;
+    margin-right: 0.5rem;
+    text-align: center;
+    width: 2rem;
+}
+
+
+.content,
+.footer {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+.content-header{
+    font-size: 2.25rem;
+    margin-bottom: 0.5rem;
+    align-content: center;
+}
+
+/* 3. Specific */
+.wallpaper {
+    background-image: url("../images/wallpaper.jpg");
+    background-position: center;
+    background-size: cover;
+    opacity: 0.2;
+    position: fixed;
+}
+
+.homepage {
+    display: flex;
+    position: relative;
+    min-height: 100vh;
+    text-shadow: 0 3px 5px rgba(0, 0, 0, .1);
+}
+
+.content{
+    height: 100%;
+    width: 80%;
+    margin: 8rem 4rem 4rem 4rem;
+}
+
+.content-header {
+    border-bottom: #FDEE30 2px solid;
+    color: #FDEE30;
+    font-size: 2.25rem;
+    line-height: 1.125;
+    letter-spacing: 0.2em;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+}
+
+.side {
+    max-height: 20rem;
+    max-width: 20rem;
+}
+
+.about {
+    max-width: 70rem;
+}
+
+.picture {
+    padding-top: 100%;
+    position: relative;
+    width: 100%;
+}
+
+.picture-shadow {
+    border-radius: 250298px;
+    background-image: radial-gradient(#FEFEFE 0%, rgba(0, 0, 0, 0) 70%);
+    position: absolute;
+    top: 13%;
+}
+
+.picture-image {
+    border-radius: 250298px;
+    position: absolute;
+}
+
+.name {
+    font-size: 2.25rem;
+    line-height: 1.125;
+    margin-bottom: 0.5rem;
+}
+
+.job {
+    color: #FDEE30;
+    font-size: 1rem;
+    font-style: italic;
+}
+
+.hr {
+    background-color: #FDEE30;
+    border: none;
+    content: "";
+    height: 1px;
+    margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
+    transform-origin: center left;
+    width: 12rem;
+}
+
+.description {
+    font-size: 1.5rem;
+}
+
+.spacing-paragraph {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.social a {
+    align-items: center;
+    display: flex;
+    font-size: 1.5rem;
+    height: 2rem;
+    justify-content: center;
+    opacity: 0.5;
+    transition-property: opacity, transform;
+    width: 2rem;
+    will-change: opacity, transform;
+}
+
+.social a:hover {
+    opacity: 1;
+    transform: scale(1.25);
+    color: #FDEE30;
+}
+
+.social a:active {
+    opacity: 1;
+    transform: scale(1.1);
+
+}
+
+.contact {
+    display: inline-block;
+    margin-top: 1.5rem;
+    vertical-align: top;
+}
+
+.button {
+    background-color: #000000;
+    border-color: #FDEE30;
+    border-radius: 10px 10px 10px 10px;
+    border-style: solid;
+    box-shadow: 0 1rem 2rem rgba(254, 254, 254, 0.2);
+    color: #FDEE30;
+    display: inline-block;
+    font-size: 1rem;
+    line-height: 1;
+    padding: 1.25em 2em;
+    text-shadow: none;
+    transition-property: box-shadow, transform;
+    user-select: none;
+    vertical-align: top;
+    white-space: nowrap;
+    will-change: box-shadow, transform;
+}
+
+.button:hover {
+    box-shadow: 0 1.5rem 3rem rgba(254, 254, 254, 0.2);
+    transform: scale(1.02) translateY(-4px);
+    background-color: #FDEE30;
+    color: #000000;
+}
+
+.button:active {
+    box-shadow: 0 0.5rem 1rem rgba(254, 254, 254, 0.3);
+    transform: scale(0.98) translateY(-2px);
+    background-color: #FDEE30;
+    color: #000000;
+}
+
+.link-text {
+    padding-left: 0.2rem;
+}
+
+.link {
+    color: #FDEE30;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    margin: 4rem 1rem;
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+
+.footer-text {
+    margin: 0.3rem 0;
+    font-size: 0.9rem;
+}
+
+.scroll {
+    bottom: 20px;
+    display: block;
+    position: absolute;
+    text-align: center;
+    padding: 12px;
+    /*margin-bottom: 6px;*/
+    height: 26px;
+    width: 26px;
+    z-index: 100;
+}
+.scroll:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 40%;
+    width: 51%;
+    background: #FDEE30;
+    transform: skew(0deg, 30deg);
+}
+.scroll:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 40%;
+    width: 50%;
+    background: #FDEE30;
+    transform: skew(0deg, -30deg);
+}
+
+/* 4. Responsiveness */
+@media screen and (max-width: 799px) {
+    .homepage {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 5rem 3rem;
+    }
+
+    .side {
+        margin-bottom: 3rem;
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .homepage {
+        align-items: center;
+        justify-content: space-around;
+        justify-content: space-evenly;
+        padding: 4rem;
+    }
+
+    .side {
+        flex-grow: 0;
+        flex-shrink: 0;
+        height: 20rem;
+        margin-left: 4rem;
+        order: 2;
+        width: 20rem;
+    }
+
+    .about {
+        flex-grow: 1;
+        flex-shrink: 1;
+    }
+}
