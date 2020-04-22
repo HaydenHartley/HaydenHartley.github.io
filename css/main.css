@@ -1,7 +1,14 @@
+:root {
+    --med-yellow: #E6CE1D;
+    --light-yellow: #F4DD08;
+    --bright-yellow: #FDEC00;
+    --grey: #403F45;
+}
+
 /* 1. Base */
 html {
     background-color: #000000;
-    background-image: linear-gradient(to bottom right, #000000, #282828);
+    background-image: linear-gradient(to bottom right, #000000, var(--grey));
     color: #FEFEFE;
     font-family: "Quicksand", sans-serif;
     font-size: 16px;
@@ -37,6 +44,7 @@ a {
     font-family: "Montserrat", "Quicksand", sans-serif;
     letter-spacing: 0.4em;
     text-transform: uppercase;
+    color:;
 }
 
 .button,
@@ -58,18 +66,12 @@ a {
     width: 2rem;
 }
 
-
-.content,
 .footer {
+    display: flex;
     align-items: center;
     display: flex;
     flex-direction: column;
     position: relative;
-}
-.content-header{
-    font-size: 2.25rem;
-    margin-bottom: 0.5rem;
-    align-content: center;
 }
 
 /* 3. Specific */
@@ -86,22 +88,6 @@ a {
     position: relative;
     min-height: 100vh;
     text-shadow: 0 3px 5px rgba(0, 0, 0, .1);
-}
-
-.content{
-    height: 100%;
-    width: 80%;
-    margin: 8rem 4rem 4rem 4rem;
-}
-
-.content-header {
-    border-bottom: #FDEE30 2px solid;
-    color: #FDEE30;
-    font-size: 2.25rem;
-    line-height: 1.125;
-    letter-spacing: 0.2em;
-    margin-bottom: 0.5rem;
-    text-transform: uppercase;
 }
 
 .side {
@@ -238,10 +224,91 @@ a {
     text-decoration: underline;
 }
 
+@supports (display: grid) {
+    .content-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto 1fr auto;
+        grid-template-areas:
+                "header header header"
+                "title title title"
+                "main main main";
+    }
+
+    @media screen and (max-width: 799px) {
+        .content-container {
+            grid-template-columns: 1fr;
+            grid-template-rows: 0.3fr 1fr auto 1fr;
+            grid-template-areas:
+                    "header"
+                    "title"
+                    "main"
+                    "footer";
+        }
+    }
+    .grid-item {
+        color: #fff;
+        background: #FDEE30;
+        padding: 3.5em 1em;
+        font-size: 1em;
+        font-weight: 700;
+    }
+
+    .header {
+        background-color: #000;
+        grid-area: header;
+        padding: 64px;
+        font-size: 2.25rem;
+        line-height: 1.125;
+        margin-bottom: 0.5rem;
+    }
+
+    .title {
+        color: gray;
+        background-color: #282828;
+        grid-area: title;
+    }
+
+    .items {
+        position: relative;
+        width: 100%;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        white-space: nowrap;
+        transition: all 0.2s;
+        transform: scale(0.98);
+        will-change: transform;
+        user-select: none;
+        cursor: pointer;
+    }
+
+    .items.active {
+        background: rgba(255, 255, 255, 0.3);
+        cursor: grabbing;
+        cursor: -webkit-grabbing;
+        transform: scale(1);
+    }
+
+    .item {
+        display: inline-block;
+        background: var(--med-yellow);
+        min-height: 250px;
+        min-width: 400px;
+        margin: 2em 1em;
+    }
+
+    @media screen and (max-width: 500px) {
+        .item {
+            min-height: 200px;
+            min-width: 200px;
+        }
+    }
+}
+
 .footer {
     display: flex;
     justify-content: center;
-    margin: 4rem 1rem;
+    padding: 64px;
     position: relative;
     text-align: center;
     width: 100%;
@@ -260,9 +327,10 @@ a {
     padding: 12px;
     /*margin-bottom: 6px;*/
     height: 26px;
-    width: 26px;
+    width: 30px;
     z-index: 100;
 }
+
 .scroll:before {
     content: '';
     position: absolute;
@@ -273,6 +341,7 @@ a {
     background: #FDEE30;
     transform: skew(0deg, 30deg);
 }
+
 .scroll:after {
     content: '';
     position: absolute;
@@ -286,7 +355,8 @@ a {
 
 /* 4. Responsiveness */
 @media screen and (max-width: 799px) {
-    .homepage {
+    .homepage,
+    .footer {
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -300,7 +370,8 @@ a {
 }
 
 @media screen and (min-width: 800px) {
-    .homepage {
+    .homepage,
+    .footer {
         align-items: center;
         justify-content: space-around;
         justify-content: space-evenly;
