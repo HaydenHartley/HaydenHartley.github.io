@@ -1,15 +1,19 @@
 :root {
+    --black: #000000;
+    --grey: #403F45;
+    --light-grey: #aaa;
+    --light-grey-opac: rgba(80,80,80,0.6);
+    --white: #FEFEFE;
     --med-yellow: #E6CE1D;
     --light-yellow: #F4DD08;
     --bright-yellow: #FDEC00;
-    --grey: #403F45;
 }
 
-/* 1. Base */
+/* Base */
 html {
-    background-color: #000000;
-    background-image: linear-gradient(to bottom right, #000000, var(--grey));
-    color: #FEFEFE;
+    background-color: var(--black);
+    background-image: linear-gradient(to bottom right, var(--black), var(--grey));
+    color: var(--white);
     font-family: "Quicksand", sans-serif;
     font-size: 16px;
     -moz-osx-font-smoothing: grayscale;
@@ -21,14 +25,14 @@ html {
     text-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
     scroll-behavior: smooth;
 }
-
 a {
     color: currentColor;
     cursor: pointer;
     text-decoration: none;
 }
 
-/* 2. Shared */
+/* Shared attributes */
+
 .wallpaper,
 .picture-shadow,
 .picture-image {
@@ -36,45 +40,33 @@ a {
     height: 100%;
     left: 0;
     top: 0;
-    width: 100%;
-}
+    width: 100%;}
 
 .job,
 .button {
     font-family: "Montserrat", "Quicksand", sans-serif;
     letter-spacing: 0.4em;
-    text-transform: uppercase;
-    color:;
-}
+    text-transform: uppercase;}
 
 .button,
 .social a {
     transform-origin: center;
     transition-duration: 100ms;
-}
 
+}
 .social {
     display: flex;
-
     margin-bottom: 1.5rem;
 }
 
-.social li {
-    height: 2rem;
-    margin-right: 0.5rem;
-    text-align: center;
-    width: 2rem;
+/* Individual Attributes */
+
+.name {
+    font-size: 2.25rem;
+    line-height: 1.125;
+    margin-bottom: 0.5rem;
 }
 
-.footer {
-    display: flex;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-}
-
-/* 3. Specific */
 .wallpaper {
     background-image: url("../images/wallpaper.jpg");
     background-position: center;
@@ -83,70 +75,150 @@ a {
     position: fixed;
 }
 
-.homepage {
-    display: flex;
-    position: relative;
-    min-height: 100vh;
-    text-shadow: 0 3px 5px rgba(0, 0, 0, .1);
-}
-
-.side {
-    max-height: 20rem;
-    max-width: 20rem;
-}
-
-.about {
-    max-width: 70rem;
-}
-
 .picture {
-    padding-top: 100%;
-    position: relative;
-    width: 100%;
-}
 
+    padding-top: 70%;
+    position: relative;
+    width: 70%;
+}
+.picture-folio{
+    margin: auto;
+    position: relative;
+}
 .picture-shadow {
     border-radius: 250298px;
-    background-image: radial-gradient(#FEFEFE 0%, rgba(0, 0, 0, 0) 70%);
+    background-image: radial-gradient(#E6CE1D 0%, rgba(0, 0, 0, 0) 70%);
     position: absolute;
     top: 13%;
 }
-
 .picture-image {
     border-radius: 250298px;
     position: absolute;
 }
 
-.name {
-    font-size: 2.25rem;
-    line-height: 1.125;
-    margin-bottom: 0.5rem;
-}
-
-.job {
-    color: #FDEE30;
-    font-size: 1rem;
-    font-style: italic;
-}
-
 .hr {
-    background-color: #FDEE30;
+    background-color: var(--light-yellow);
     border: none;
     content: "";
     height: 1px;
+    margin-left: auto;
+    margin-right: auto;
     margin-bottom: 1.5rem;
     margin-top: 1.5rem;
     transform-origin: center left;
     width: 12rem;
+
 }
 
-.description {
-    font-size: 1.5rem;
+
+* {
+    box-sizing: border-box;
 }
 
-.spacing-paragraph {
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
+/* Style the body */
+body {
+    margin: 0;
+}
+
+/* Header/logo Title */
+.header,.portfolio,.contact {
+    text-align: Left;
+    color: white;
+}
+
+nav{
+    position: fixed;
+    top:0;
+    left:0;
+    width:20%;
+    height: 100%;
+    padding: 20px;
+    background: var(--light-grey-opac);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    margin: auto;
+    flex: 80%;
+    padding: 20px;
+}
+
+/* Column container */
+.main {
+    padding: 40px;
+    margin-left: 20%;
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+}
+
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/left column */
+
+
+
+
+/* Fake image, just for this example */
+.folioimg {
+    display: block;
+    opacity: 1;
+    width: 100%;
+    padding: 20px;
+}
+
+/* Footer */
+.footer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    background: var(--grey);
+}
+
+.link-text {
+    padding-left: 0.2rem;
+}
+.link {
+    color: #FDEE30;
+}
+.link:hover {
+    text-decoration: underline;
+}
+
+.button {
+    background-color: var(--grey);
+    border-color: var(--light-yellow);
+    border-radius: 10px 10px 10px 10px;
+    border-style: solid;
+    box-shadow: 0 1rem 2rem rgba(254, 254, 254, 0.2);
+    color: var(--light-yellow);
+    display: inline-block;
+    font-size: 1rem;
+    line-height: 1;
+    padding: 1.25em 2em;
+    text-shadow: none;
+    transition-property: box-shadow, transform;
+    user-select: none;
+    vertical-align: top;
+    margin: auto;
+    white-space: nowrap;
+    will-change: box-shadow, transform;
+}
+.button:hover {
+    box-shadow: 0 1.5rem 3rem rgba(254, 254, 254, 0.2);
+    transform: scale(1.02) translateY(-4px);
+    background-color: var(--light-yellow);
+    color: #000000;
+}
+.button:active {
+    box-shadow: 0 0.5rem 1rem rgba(254, 254, 254, 0.3);
+    transform: scale(0.98) translateY(-2px);
+    background-color: #FDEE30;
+    color: #000000;
 }
 
 .social a {
@@ -159,236 +231,34 @@ a {
     transition-property: opacity, transform;
     width: 2rem;
     will-change: opacity, transform;
+    margin-right: 0.5rem;
+    text-align: center;
 }
-
 .social a:hover {
     opacity: 1;
     transform: scale(1.25);
     color: #FDEE30;
 }
-
 .social a:active {
     opacity: 1;
     transform: scale(1.1);
-
 }
-
 .contact {
     display: inline-block;
     margin-top: 1.5rem;
     vertical-align: top;
 }
 
-.button {
-    background-color: #000000;
-    border-color: #FDEE30;
-    border-radius: 10px 10px 10px 10px;
-    border-style: solid;
-    box-shadow: 0 1rem 2rem rgba(254, 254, 254, 0.2);
-    color: #FDEE30;
-    display: inline-block;
-    font-size: 1rem;
-    line-height: 1;
-    padding: 1.25em 2em;
-    text-shadow: none;
-    transition-property: box-shadow, transform;
-    user-select: none;
-    vertical-align: top;
-    white-space: nowrap;
-    will-change: box-shadow, transform;
-}
-
-.button:hover {
-    box-shadow: 0 1.5rem 3rem rgba(254, 254, 254, 0.2);
-    transform: scale(1.02) translateY(-4px);
-    background-color: #FDEE30;
-    color: #000000;
-}
-
-.button:active {
-    box-shadow: 0 0.5rem 1rem rgba(254, 254, 254, 0.3);
-    transform: scale(0.98) translateY(-2px);
-    background-color: #FDEE30;
-    color: #000000;
-}
-
-.link-text {
-    padding-left: 0.2rem;
-}
-
-.link {
-    color: #FDEE30;
-}
-
-.link:hover {
-    text-decoration: underline;
-}
-
-@supports (display: grid) {
-    .content-container {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: auto 1fr auto;
-        grid-template-areas:
-                "header header header"
-                "title title title"
-                "main main main";
-    }
-
-    @media screen and (max-width: 799px) {
-        .content-container {
-            grid-template-columns: 1fr;
-            grid-template-rows: 0.3fr 1fr auto 1fr;
-            grid-template-areas:
-                    "header"
-                    "title"
-                    "main"
-                    "footer";
-        }
-    }
-    .grid-item {
-        color: #fff;
-        background: #FDEE30;
-        padding: 3.5em 1em;
-        font-size: 1em;
-        font-weight: 700;
-    }
-
-    .header {
-        background-color: #000;
-        grid-area: header;
-        padding: 64px;
-        font-size: 2.25rem;
-        line-height: 1.125;
-        margin-bottom: 0.5rem;
-    }
-
-    .title {
-        color: gray;
-        background-color: #282828;
-        grid-area: title;
-    }
-
-    .items {
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+    nav,.main {
         position: relative;
         width: 100%;
-        overflow-x: scroll;
-        overflow-y: hidden;
-        white-space: nowrap;
-        transition: all 0.2s;
-        transform: scale(0.98);
-        will-change: transform;
-        user-select: none;
-        cursor: pointer;
-    }
-
-    .items.active {
-        background: rgba(255, 255, 255, 0.3);
-        cursor: grabbing;
-        cursor: -webkit-grabbing;
-        transform: scale(1);
-    }
-
-    .item {
-        display: inline-block;
-        background: var(--med-yellow);
-        min-height: 250px;
-        min-width: 400px;
-        margin: 2em 1em;
-    }
-
-    @media screen and (max-width: 500px) {
-        .item {
-            min-height: 200px;
-            min-width: 200px;
-        }
-    }
-}
-
-.footer {
-    display: flex;
-    justify-content: center;
-    padding: 64px;
-    position: relative;
-    text-align: center;
-    width: 100%;
-}
-
-.footer-text {
-    margin: 0.3rem 0;
-    font-size: 0.9rem;
-}
-
-.scroll {
-    bottom: 20px;
-    display: block;
-    position: absolute;
-    text-align: center;
-    padding: 12px;
-    /*margin-bottom: 6px;*/
-    height: 26px;
-    width: 30px;
-    z-index: 100;
-}
-
-.scroll:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 40%;
-    width: 51%;
-    background: #FDEE30;
-    transform: skew(0deg, 30deg);
-}
-
-.scroll:after {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: 40%;
-    width: 50%;
-    background: #FDEE30;
-    transform: skew(0deg, -30deg);
-}
-
-/* 4. Responsiveness */
-@media screen and (max-width: 799px) {
-    .homepage,
-    .footer {
         flex-direction: column;
         justify-content: center;
         align-items: center;
         padding: 5rem 3rem;
     }
-
-    .side {
-        margin-bottom: 3rem;
-        width: 100%;
     }
 }
 
-@media screen and (min-width: 800px) {
-    .homepage,
-    .footer {
-        align-items: center;
-        justify-content: space-around;
-        justify-content: space-evenly;
-        padding: 4rem;
-    }
-
-    .side {
-        flex-grow: 0;
-        flex-shrink: 0;
-        height: 20rem;
-        margin-left: 4rem;
-        order: 2;
-        width: 20rem;
-    }
-
-    .about {
-        flex-grow: 1;
-        flex-shrink: 1;
-    }
-}

@@ -91,7 +91,7 @@
 
 
 /*2. Define animation attributes*/
-wallpaper,
+.wallpaper,
 .picture-shadow,
 .picture-image,
 .name,
@@ -99,6 +99,7 @@ wallpaper,
 .hr,
 .description,
 .contact,
+.navigation,
 .social li {
     animation-duration: 1s;
     animation-timing-function: cubic-bezier(0, 0.5, 0, 1);
@@ -111,18 +112,18 @@ wallpaper,
     animation-timing-function: cubic-bezier(0, 0.5, 0.25, 1.25);
 }
 
-wallpaper,
+.wallpaper,
 .picture-shadow,
 .picture-image {
     opacity: 0;
 }
 
 /*3. Apply animations*/
-.contact {
+.contact,.navigation {
     animation-name: bounceIn;
 }
 
-wallpaper {
+.wallpaper {
     animation-timing-function: ease-out;
 }
 
